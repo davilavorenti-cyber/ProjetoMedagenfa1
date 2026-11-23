@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#073c68">
+  <meta name="description" content="MedAgenda — sistema de agendamento de consultas médicas">
+  <title>MedAgenda | Consultas Médicas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#inicio" aria-label="MedAgenda - Início">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M4 24h8l5-11 8 23 6-15 4 7h9"/><path d="M24 43S5 32 5 17A11 11 0 0 1 24 9a11 11 0 0 1 19 8c0 15-19 26-19 26Z"/></svg></span>
+        <span class="brand-copy"><strong>MedAgenda</strong><small>Sistema de Agendamento de Consultas Médicas</small></span>
+      </a>
+      <nav class="side-nav" aria-label="Menu principal">
+        <button class="nav-link active" data-page="inicio"><span class="nav-icon" data-icon="home"></span><span>Início</span></button>
+        <button class="nav-link" data-role="patient" data-page="minhas"><span class="nav-icon" data-icon="calendar"></span><span>Minhas Consultas</span></button>
+        <button class="nav-link" data-role="doctor" data-page="agenda"><span class="nav-icon" data-icon="calendar"></span><span>Minha Agenda</span></button>
+        <button class="nav-link" data-role="patient doctor" data-page="mensagens"><span class="nav-icon" data-icon="chat"></span><span>Mensagens</span></button>
+        <button class="nav-link" data-role="patient doctor" data-page="documentos"><span class="nav-icon" data-icon="file"></span><span>Receitas e Atestados</span></button>
+        <button class="nav-link" data-role="patient" data-page="avaliacoes"><span class="nav-icon" data-icon="star"></span><span>Avaliações</span></button>
+        <button class="nav-link" data-role="patient" data-page="feedback"><span class="nav-icon" data-icon="heart"></span><span>Feedback</span></button>
+        <button class="nav-link" data-role="patient doctor" data-page="perfil"><span class="nav-icon" data-icon="user"></span><span>Meus Dados</span></button>
+        <button class="nav-link" data-role="admin" data-page="medicos"><span class="nav-icon" data-icon="users"></span><span>Médicos</span></button>
+        <button class="nav-link" data-role="admin" data-page="consultas"><span class="nav-icon" data-icon="calendar"></span><span>Consultas</span></button>
+        <button class="nav-link" data-role="admin" data-page="pacientes"><span class="nav-icon" data-icon="user"></span><span>Pacientes</span></button>
+        <button class="nav-link" data-role="admin" data-page="planos"><span class="nav-icon" data-icon="shield"></span><span>Planos de Saúde</span></button>
+        <button class="nav-link" data-role="admin" data-page="feedbacks"><span class="nav-icon" data-icon="chat"></span><span>Feedbacks</span></button>
+      </nav>
+      <button class="logout-button" id="logoutButton"><span data-icon="logout"></span><span>Sair</span></button>
+      <div class="sidebar-footer">MedAgenda <span>•</span> v1.0</div>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="mobileMenu" aria-label="Abrir menu"><span data-icon="menu"></span></button>
+        <div class="topbar-spacer"></div>
+        <div class="profile-wrap">
+          <button class="profile-button" id="profileButton" aria-expanded="false"><span class="profile-avatar" data-icon="user"></span><span id="profileName">Administrador</span><span class="chevron" data-icon="chevronDown"></span></button>
+          <div class="profile-menu hidden" id="profileMenu"><strong id="profileMenuName">Administrador</strong><small id="profileMenuEmail">admin@medagenda.com</small><button id="profileLogout"><span data-icon="logout"></span> Sair do sistema</button></div>
+        </div>
+      </header>
+      <main class="main-content" id="mainContent" tabindex="-1"></main>
+      <footer class="app-footer">© 2026 MedAgenda <span>•</span> Gestão de consultas médicas</footer>
+    </section>
+  </div>
+  <div id="authRoot"></div>
+  <div id="modalRoot"></div>
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+  <script src="app.js"></script>
+</body>
+</html>
